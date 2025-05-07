@@ -40,7 +40,7 @@
   }
 
   // Close the last opened box
-  function closeLastBox() {
+  function closeActiveDis() {
     if (openBoxes.length > 0) {
       const lastId = openBoxes.pop();
       const box = document.getElementById(lastId);
