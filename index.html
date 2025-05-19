@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Back Button Stack</title>
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
     .box {
       display: none;
@@ -26,8 +28,16 @@
 <button id="open3">Open Box 3</button>
 <button id="open4">Open Box 4</button>
 <button id="open5">Open Box 5</button>
-
+<button onclick="sendExitAlert()">Refresh Conpleted</button>
 <script>
+
+  function sendExitAlert() {
+      if (window.AppInventor && window.AppInventor.setWebViewString) {
+        window.AppInventor.setWebViewString("exit_alert");
+      } else {
+        alert("Not running inside Kodular WebViewer");
+      }
+  }
   let openBoxes = [];
 
   // Show box and add to stack
